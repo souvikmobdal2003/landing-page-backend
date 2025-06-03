@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify, render_template
 import sqlite3
+import os
 
 app = Flask(__name__)
 
 # Create table
 def init_db():
-    conn = sqlite3.connect('database.db')
-    c = conn.cursor()
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS leads (
+    if not os.path.exists('database.db'):
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute('''CREATE TABLE IF NOT EXISTS leads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             email TEXT,
@@ -16,10 +17,13 @@ def init_db():
             appType TEXT,
             launchTimeline TEXT,
             budgetRange TEXT
-        )
-    ''')
-    conn.commit()
-    conn.close()
+        )''')
+        conn.commit()
+        conn.close()
+
+@app.route('/')
+def home():
+    return render_template('index.html')  # Looks in templates/index.html
 
 # Submit form data (POST)
 @app.route('/submit', methods=['POST'])

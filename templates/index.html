@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>App Launch Form</title>
+</head>
+
+<body>
+    <h2>App Launch Inquiry</h2>
+    <form id="leadForm">
+        <input type="text" name="name" placeholder="Your Name" required /><br />
+        <input type="email" name="email" placeholder="Email" required /><br />
+        <input type="text" name="phone" placeholder="Phone" /><br />
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("leadForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const jsonData = Object.fromEntries(formData.entries());
+
+            const res = await fetch("/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(jsonData),
+            });
+
+            const result = await res.json();
+            alert(result.message || result.error);
+        });
+    </script>
+</body>
+
+</html>

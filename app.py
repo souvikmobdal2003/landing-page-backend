@@ -40,7 +40,7 @@ def submit():
         return jsonify({'error': str(e)}), 500
 
 # ✅ New Route to Get All Leads (GET)
-@app.route('/leads', methods=['GET'])
+@app.route('/api/leads', methods=['GET'])
 def get_leads():
     try:
         conn = sqlite3.connect('database.db')

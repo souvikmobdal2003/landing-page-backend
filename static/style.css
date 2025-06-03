@@ -1,0 +1,115 @@
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2 {
+  color: #00e6e6;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.hero p {
+  color: #d1d1d1;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+ul li {
+  margin-bottom: 6px;
+  color: #ddd;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #ffffff30;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: #ccc;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #00e6e6;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 230, 230, 0.25);
+}
+
+.btn-primary {
+  background-color: #1abc9c;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #16a085;
+}
+
+.btn-outline-light {
+  border-color: #00e6e6;
+  color: #00e6e6;
+}
+
+.btn-outline-light:hover {
+  background-color: #00e6e6;
+  color: #0f2027;
+}
+
+.privacy {
+  font-size: 0.85rem;
+  color: #bbbbbb;
+}
+select.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #ffffff30;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  appearance: none;
+  padding-right: 2rem;
+}
+
+select.form-control option {
+  background: #1a2a33;
+  color: #fff;
+  border: none;
+}
+
+select.form-control:focus {
+  border-color: #00e6e6;
+  box-shadow: 0 0 0 0.2rem rgba(0, 230, 230, 0.25);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.logo {
+ 
+ max-width: 80px;
+      height: auto;
+      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.6));
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      border-radius: 10px;
+  
+
+}
+.logo:hover {
+  transform: scale(1.05);
+}

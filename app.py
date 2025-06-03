@@ -26,7 +26,7 @@ def home():
     return render_template('index.html')  # Looks in templates/index.html
 
 # Submit form data (POST)
-@app.route('/submit', methods=['POST'])
+@app.route('/api/submit', methods=['POST'])
 def submit():
     data = request.get_json()
     print("Received:", data)  # For debugging
